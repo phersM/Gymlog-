@@ -53,7 +53,7 @@ body{
 }
 
 /* ── LAYOUT ── */
-.shell{display:flex;flex-direction:column;height:100%;overflow:hidden;position:fixed;width:100%;top:0;left:0;}
+.shell{display:flex;flex-direction:column;height:100%;overflow:hidden;}
 .view{display:none;flex:1;overflow-y:auto;overscroll-behavior:contain;padding-bottom:80px}
 .view.active{display:block}
 .inner{max-width:600px;margin:0 auto;padding:16px 16px 0}
@@ -510,44 +510,11 @@ display:flex;gap:4px;padding:0 16px 14px;
 </style>
 
 <style>
-/* Block tiiny.host overlay ads */
-iframe[src*="tiiny"],
-div[class*="tiiny"],
-div[id*="tiiny"],
-div[class*="upgrade"],
-div[class*="subscribe"],
-div[class*="banner"][style*="position:fixed"],
-div[class*="overlay"],
-div[style*="z-index: 9999"],
-div[style*="z-index:9999"],
-div[style*="z-index: 99999"],
-div[style*="z-index:99999"] {
-  display: none !important;
-  visibility: hidden !important;
-  opacity: 0 !important;
-  pointer-events: none !important;
-}
+/* ad blocker removed */
 </style>
 
 <script>
-// Remove tiiny.host ads on load
-document.addEventListener('DOMContentLoaded', function() {
-  const observer = new MutationObserver(function(mutations) {
-    mutations.forEach(function(mutation) {
-      mutation.addedNodes.forEach(function(node) {
-        if(node.nodeType === 1) {
-          const style = node.getAttribute('style') || '';
-          const cls = node.className || '';
-          if(style.includes('z-index: 9') || style.includes('z-index:9') || 
-             cls.includes('upgrade') || cls.includes('subscribe') ||
-             cls.includes('tiiny') || cls.includes('overlay')) {
-            node.remove();
-          }
-        }
-      });
-    });
-  });
-  observer.observe(document.body, { childList: true, subtree: true });
+// ad blocker removed
 });
 </script>
 
